@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule ^$ index.php
+    RewriteRule ^bloodgroupsystem/ bloodgroupsystem.php
+    RewriteRule ^calculate/	calculate.php
+    RewriteRule ^facts/ facts.php
+    RewriteRule ^famousquotes/ famousquotes.php
+    RewriteRule ^login/ login.php
+    RewriteRule ^logout/ logout.php
+    RewriteRule ^qualification/ qualified.php
+    RewriteRule ^register/ register.php
+    RewriteRule ^urgent/ urgent_blood.php
+    RewriteRule ^wall/ wall.php
+</IfModule>
