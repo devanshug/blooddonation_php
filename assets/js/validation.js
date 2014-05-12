@@ -22,7 +22,6 @@ $(document).ready(function() {
 			
 			//Check if username exists
 			function doSomethingWithData(data) {
-                              
 				if ( data == "Username Exists" ) {
 					$('#error').text(data);
 					return false;

@@ -1,12 +1,11 @@
 $(document).ready(function() {
-/*         $('#submit').prop('disabled',true);
+        $('#submit').prop('disabled',true);
 	$('#captchaverify').click(function() {
-		$('#responsestring').load('/verify/'+$('#captchacode').val()+'/', function( response, status, xhr ) {
+		$('#responsestring').load('verify.php?password='+$('#captchacode').val()+'&random='+$('#random').val(), function( response, status, xhr ) {
 			if ( response == "Verified Human!!!" )
 				$('#submit').prop('disabled',false);						
 		});
 	});
-        */
 	$('#sametemp').click(function() {
 		
                 $('#permanent').slideToggle(1000);

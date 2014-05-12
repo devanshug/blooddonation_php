@@ -123,19 +123,26 @@
                 <div class="inputtext"><label for="pic">Your Pic : </label></div>
                 <div class="inputcomponent"><input type="file" name="pic" id="pic" class="uploadtab" accept="image/*"/></div>
             </div>
-            <!--<div id="captcha_input">
-                    <input type="hidden" name="random" id="random" value="{{cap_val}}" />
-                    <div class="inputtext"><label for="{{cap_id}}">Enter the captcha : </label></div>
-                    <div id="captcha_image"><img src="{{cap_img}}" name="{{cap_id}}" id="{{cap_id}}"/></div>				 <!-- Captcha Image -->
-            <!--	<div class="inputcomponent"><input type="text" name="captchacode"  id="captchacode" class="textcomponent" value="Enter the captcha code"/></div>
+            <?php
+                require 'CaptchasDotNet.php';
+                $captchas = new CaptchasDotNet('devanshug', '6HdMmG1EgKnJEOqHfQ5r9ywhkUbcM42UaeA0ffK1',
+                                'captchas/captchasnet-random-strings','3600',
+                                'abcdefghkmnopqrstuvwxyz0123456789','6',
+                                '240','80','000088');
+            ?>
+            <div id="captcha_input">
+                    <input type="hidden" name="random" id="random" value="<?php echo $captchas->random(); ?>" />
+                    <div class="inputtext"><label for="captcha.net">Enter the captcha : </label></div>
+                    <div id="captcha_image"><img src="<?php echo $captchas->image_url(); ?>" name="captcha.net" id="captcha.net"/></div>				 <!-- Captcha Image -->
+                    <div class="inputcomponent"><input type="text" name="captchacode"  id="captchacode" class="textcomponent" value="Enter the captcha code"/></div>
                     <input type="button" name="captchaverify" id="captchaverify" class="buttoncomponent" value="Verify My Captcha Code"/>
                     <p id="responsestring"></p>
-            </div> -->
+            </div>
             <div id="submitbutton">
                 <input type="submit" name="submit" id="submit" class="buttoncomponent" value="Register"/>
             </div>
             <script type="text/javascript">
-                var cap_id = '{{cap_id}}';
+                var cap_id = 'captcha.net';
             </script>
             <script type="text/javascript" src="assets/js/captchaapi.js"></script>
             <script type="text/javascript" src="assets/js/appjs.js"></script>
