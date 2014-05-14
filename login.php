@@ -1,3 +1,18 @@
+
+<?php 
+
+if(!isset($_SESSION))
+{
+session_start();
+}
+
+if (isset( $_SESSION['username'])) {
+$url="wall.php";
+header('Location: '.$url);
+}
+
+?>
+
 <?php
 include_once 'controller/login_controller.php';
 
